@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100hv;
+}
+:root {
+  --soft-lila: #c8b6e2;
+  --soft-pembe: #f4c2d7;
+  --soft-sari: #f6e6a8;
+  --soft-yesil: #cfe8d5;
+  --soft-turuncu: #f3c6a5;
+
+  --yazi-soluk: rgba(255, 255, 255, 0.14);
+  --yazi-guclu: rgba(255, 255, 255, 0.85);
+}
+
