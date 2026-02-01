@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import memoryOyun from "../assets/memoryOyun.png";
 import linkedinClon from "../assets/Linkedin-Clon.png";
-import ecoflow from "../assets/ecoflow.png";
+import ecoflow from "../assets/ecoFlow.png";
 import weatherApp from "../assets/havaDurumu.png";
 import billGates from "../assets/billgates.png";
 
