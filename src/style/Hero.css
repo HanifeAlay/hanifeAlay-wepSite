@@ -12,8 +12,12 @@
 .sahne {
   position: relative;
   min-height: 100vh;
+  height: 100vh; 
   overflow: hidden;
-  background: #0b0b0f;
+  background:
+    radial-gradient(700px 480px at 25% 20%, rgba(255,122,182,0.10), rgba(0,0,0,0) 60%),
+    radial-gradient(800px 520px at 80% 70%, rgba(178,141,255,0.16), rgba(0,0,0,0) 62%),
+    linear-gradient(180deg, #0b0b0f, #110a22);
 }
 
 .yazi_duvari {
@@ -28,87 +32,73 @@
   overflow: hidden;
 }
 
-/* Satır düzeni */
+
 .yazi_satiri {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
   width: 140vw;
   margin-left: -20vw;
- white-space: nowrap;
- transform: translateX(0);
+  white-space: nowrap;
 }
 
-/* Kelime temel stili */
-.kelime {
-  font-size: clamp(18px, 3.2vw, 52px);
+
+ .kelime {
+  font-size: clamp(16px, 4vw, 52px); /* Mobilde biraz daha küçültüldü */
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  /* Soluk görünüm */
   color: var(--yazi-soluk);
-}
+ }
 
-.kelime_onde {
-  color: rgba(255,255,255,0.95);
+ .kelime_onde {
+  color: rgba(255, 255, 255, 0.95);
   filter: blur(0px);
   opacity: 1;
 
   text-shadow:
-    0 0 8px rgba(255,255,255,0.25),
-    0 0 18px rgba(255,105,180,0.25);
-
+    0 0 8px rgba(255, 255, 255, 0.25),
+    0 0 18px rgba(255, 105, 180, 0.25);
   z-index: 5;
-}
+ }
 
-.kelime:not(.kelime_onde){
+ .kelime:not(.kelime_onde) {
   opacity: 0.18;
   filter: blur(0.6px);
-}
+ }
 
-/* Vurgu: bazı kelimeler daha net */
-.vurgu {
+ .vurgu {
   color: var(--yazi-guclu);
 }
 
-/* Soft renk sınıfları */
-.renk_lila    { color: color-mix(in srgb, var(--soft-lila) 70%, white 30%); }
-.renk_pembe   { color: color-mix(in srgb, var(--soft-pembe) 70%, white 30%); }
-.renk_sari    { color: color-mix(in srgb, var(--soft-sari) 70%, white 30%); }
-.renk_yesil   { color: color-mix(in srgb, var(--soft-yesil) 70%, white 30%); }
+.renk_lila { color: color-mix(in srgb, var(--soft-lila) 70%, white 30%); }
+.renk_pembe { color: color-mix(in srgb, var(--soft-pembe) 70%, white 30%); }
+.renk_sari { color: color-mix(in srgb, var(--soft-sari) 70%, white 30%); }
+.renk_yesil { color: color-mix(in srgb, var(--soft-yesil) 70%, white 30%); }
 .renk_turuncu { color: color-mix(in srgb, var(--soft-turuncu) 70%, white 30%); }
 
-/* NOT:
-   Eğer color-mix tarayıcında sorun çıkarırsa (nadiren),
-   direkt şu şekilde yazabiliriz:
-   .renk_lila { color: var(--soft-lila); } vs.
-*/
 
-/* =========================================================
-   ÖN KATMAN: İçerik (laptop/memoji buraya gelecek)
-   ========================================================= */
 .on_katman {
   position: relative;
   z-index: 2;
-  min-height: 100vh;
-
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  perspective: 1000px; /* 3D kapanma hissi için. */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
 }
 
 .laptop_kapsayici {
-  width: min(520px, 100vw);
-  position: relative;
+  width: clamp(260px, 45vw, 520px);
+  position: absolute;
+  left: 50%;
+  top: 65%; /* Laptop konumu merkeze yaklaştırıldı */
+  transform: translate(-50%, -50%);
   z-index: 6;
-
-  transform-origin: center bottom;
   transform-style: preserve-3d;
   will-change: transform;
-  top: 30%;
-  
 }
 
 .laptop_resim {
@@ -116,49 +106,83 @@
   height: auto;
   display: block;
   transform-origin: center bottom;
-   filter: drop-shadow(0 15px 28px rgba(188, 133, 133, 0.188))
+  filter: drop-shadow(0 15px 28px rgba(188, 133, 133, 0.188));
 }
 
 .memoji_kapsayici {
-position: absolute;
-    z-index: 0;
-    width: 900px;
-    bottom: 90px;
-    left: 20%;
-    transform: translateX(-50%, -50%);
-    filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
-    top: 30%;
+  position: absolute;
+  z-index: 0; 
+  width: clamp(240px, 50vw, 450px); /* Boyut dinamikleştirildi */
+  left: 50%;
+  top: 70%; /* Memoji laptopun üzerinde duracak şekilde ayarlandı */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
 }
+
 .memoji {
   width: 100%;
   height: auto;
   display: block;
- 
 }
 
-/* Hero’nun altındaki renkli çizgi */
-.hero_cizgi{
+.hero_cizgi {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-
-  height: 6px;                 /* çizgi kalınlığı */
-  z-index: 8;                  /* yazıların + arka planın üstünde */
-
+  height: 6px;
+  z-index: 8;
   background: linear-gradient(
     90deg,
-    #b28dff,   /* lila */
-    #ff7ab6,   /* pembe */
-    #ffd67a,   /* sarı */
-    #7dffb2,   /* yeşil */
-    #ff9b7a    /* turuncu */
+    #b28dff, #ff7ab6, #ffd67a, #7dffb2, #ff9b7a
   );
   opacity: 0.95;
 }
 
-/* Mobil ayar */
+/* --- RESPONSIVE AYARLAR --- */
+@media (max-width: 1024px) {
+  .memoji_kapsayici {
+    top: 72%;
+  }
+  .laptop_kapsayici {
+    top: 73%;
+  }
+}
+
+@media (max-width: 768px) {
+  .yazi_satiri {
+    width: 250vw;
+    margin-left: -75vw;
+  }
+  
+  .laptop_kapsayici {
+    width: 75vw;
+    top: 70%;
+  }
+
+  .memoji_kapsayici {
+    width: 70vw;
+    top: 70%;
+  }
+}
+
 @media (max-width: 480px) {
-  .laptop_kapsayici { width: min(680px, 96vw); }
-  .memoji { width: min(320px, 78vw); top: 54%; }
+  .kelime {
+    font-size: 18px;
+  }
+
+  .laptop_kapsayici {
+    width: 85vw;
+    top: 78%;
+  }
+
+  .memoji_kapsayici {
+    width: 80vw;
+    top: 77%;
+  }
+
+  .yazi_satiri {
+    gap: 5px;
+  }
 }

@@ -1,0 +1,165 @@
+:root {
+  --soft-lila: #c8b6e2;
+  --soft-pembe: #f4c2d7;
+  --soft-sari: #f6e6a8;
+  --soft-yesil: #cfe8d5;
+  --soft-turuncu: #f3c6a5;
+
+  --about-zemin: #0b0816; 
+  --about-yazi: rgba(255, 255, 255, 0.88);
+  --about-yazi-soluk: rgba(255, 255, 255, 0.72);
+}
+
+/*  zemin */
+.about {
+  width: 100%;
+  background: radial-gradient(
+      1200px 600px at 20% 10%,
+      rgba(178, 141, 255, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 85% 30%,
+      rgba(255, 122, 182, 0.14),
+      transparent 55%
+    ),
+    var(--about-zemin);
+
+  padding: 88px 20px;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.about_container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Başlık */
+.about_baslik {
+  margin: 0 0 18px 0;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(22px, 3.2vw, 42px);
+  line-height: 1.1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.about_baslik_renkli {
+  background: linear-gradient(90deg, #b28dff, #ff7ab6, #ffd67a, #7dffb2, #ff9b7a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Metin */
+.about_icerik {
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about_paragraf {
+  margin: 0 0 14px 0;
+  color: var(--about-yazi);
+  font-size: clamp(18px, 1.9vw, 30px);
+  line-height: 1.65;
+text-align: center;
+}
+
+/* Etiket alanı */
+.about_chipler {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Basılmayan buton/pill */
+.about_chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  font-size: 25px;
+  line-height: 1;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* “kenarında ışık” hissi */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 10px 22px rgba(0, 0, 0, 0.35);
+
+  user-select: none;
+  pointer-events: none; /* tıklanamasın */
+}
+
+/* palete göre canlı yazı renkleri */
+.chip_lila    { color: var(--soft-lila); }
+.chip_pembe   { color: var(--soft-pembe); }
+.chip_sari    { color: var(--soft-sari); }
+.chip_yesil   { color: var(--soft-yesil); }
+.chip_turuncu { color: var(--soft-turuncu); }
+
+.about_cizgi {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  z-index: 8;
+  background: linear-gradient(
+    90deg,
+    #b28dff, #ff7ab6, #ffd67a, #7dffb2, #ff9b7a
+  );
+  opacity: 0.95;
+}
+
+
+/* Responsive: küçük ekranda boşluk + okunabilirlik */
+@media (max-width: 768px) {
+  .about {
+    padding: 72px 16px;
+  }
+
+  .about_chip {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .about_chipler {
+    gap: 8px;
+  }
+  .about_chip {
+    padding: 8px 10px;
+    font-size: 10.5px;
+  }
+}
+
+/* Hareketi sevmeyen kullanıcılar için */
+@media (prefers-reduced-motion: reduce) {
+  .about_baslik,
+  .about_paragraf,
+  .about_chip {
+    transition: none !important;
+  }
+}

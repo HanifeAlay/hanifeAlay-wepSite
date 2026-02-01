@@ -1,23 +1,25 @@
-import { useMemo, useState } from 'react'
-import './App.css'
-import { useSelector } from 'react-redux'
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import './App.css';
+import About from './components/About';
+import Contact from './components/Conctact';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
-import FloatingThemeToggle from './components/FloatingThemeToggle'
-import { selectMode } from './redux/appSlice';
-import { getAppTheme } from './theme/muiTheme';
+import Navbar from './components/Navbar';
+import Projects from './components/Projects';
 
 function App() {
-  const mode = useSelector(selectMode);
-  const theme = useMemo(() => getAppTheme (mode), [mode]);
+ 
+
  
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <FloatingThemeToggle />
-      <Hero />
-    </ThemeProvider>
+    <>
+    <Navbar />
+     <Hero />
+     <About/>
+     <Projects/>
+     <Contact />
+     < Footer />
+  </>
   )
 }
 

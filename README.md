@@ -1,16 +1,95 @@
-# React + Vite
+# 🌐 Hanife Alay – Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, frontend geliştirme yolculuğumda edindiğim bilgi ve deneyimleri sergilemek için hazırlanmış **kişisel portföy web sitesidir**.  
+Amaç; teknik becerilerimi, yaptığım projeleri ve tasarım yaklaşımımı tek sayfalık, modern ve akıcı bir deneyimle sunmaktır.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Projede Neler Var?
 
-## React Compiler
+- GSAP & ScrollTrigger ile hazırlanmış **interaktif Hero alanı**
+- Scroll’a bağlı animasyonlar (pin, scrub, intro animasyonları)
+- Responsive (mobil / tablet / desktop) uyumlu tasarım
+- Proje kartları ve GitHub yönlendirmeleri
+- İletişim ve sosyal bağlantılar (CV, LinkedIn, GitHub, Mail)
+- Modern, sade ve görsel ağırlıklı UI yaklaşımı
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Kullanılan Teknolojiler
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ⚙️ Frontend
+- **React**
+- **JavaScript (ES6+)**
+- **CSS3**
+- **HTML5**
+
+### 🎨 UI / Stil
+- **Material UI (MUI)**  
+  - AppBar, Button gibi temel bileşenler
+- Özel yazılmış **custom CSS**
+- CSS Variables (renk ve tema yönetimi)
+- `clamp()` ile akışkan tipografi
+
+### 🎞 Animasyon
+- **GSAP**
+- **GSAP ScrollTrigger**
+  - `pin`
+  - `scrub`
+  - scroll’a bağlı transform animasyonları
+
+---
+
+## 🧠 Öne Çıkan Teknik Detaylar
+
+- Hero bölümünde:
+  - Scroll sadece **ilk aşağı kaydırmada** çalışır
+  - Yukarı çıkıldığında animasyon tekrar tetiklenmez
+  - Sayfa yenilenene kadar hero sabit davranır
+- Absolute + relative konumlandırma kombinasyonu ile
+  **responsivity bozulmadan** animasyon yönetimi
+- GSAP cleanup (`kill`, `ScrollTrigger.kill()`) ile
+  performans ve memory leak önlemleri
+- Mobil ve masaüstü için ayrı konum ve ölçek ayarları
+
+---
+
+
+# 🎯 Amaç & Yaklaşım
+
+Bu projede hedefim:
+	•	Sadece “çalışan” değil,
+	•	kullanıcı deneyimi güçlü
+	•	akıcı animasyonlara sahip
+	•	ve frontend bakış açımı yansıtan bir portföy oluşturmaktı.
+
+Projede yer alan tüm çalışmalar:
+	•	Eğitim sürecinde
+	•	Öğrenme ve deneme amacıyla
+	•	Örnek proje olarak geliştirilmiştir.
+
+⸻
+
+# 🔗 Bağlantılar
+	•	GitHub: Proje kartları üzerinden yönlendirme
+	•	LinkedIn: Profesyonel profil
+	•	CV: Detaylı özgeçmiş
+	•	Mail: İletişim için
+
+(Detaylı bağlantılar proje içindeki Contact bölümünde yer almaktadır.)
+
+⸻
+
+# 🚀 Kurulum & Çalıştırma
+
+  npm install
+  npm run dev
+
+
+ # 📝 Not
+
+Bu proje, frontend gelişim sürecimin bir yansımasıdır.
+Zamanla yeni projeler, iyileştirmeler ve animasyonlar eklenmeye devam edecektir.
+
+# Hanife Alay
+# Frontend Developer

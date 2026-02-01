@@ -38,7 +38,7 @@ function Hero() {
 
     // Intro
     const intro = gsap.timeline({defaults: {ease: "power2.out" } });
-
+    
 
     intro
     // önce yazi duvarı 
@@ -55,8 +55,9 @@ function Hero() {
         trigger: sahne,
         start: "top top",
         end: "+=900",
+        once: true,
         scrub: true,
-        pin: true,
+        pinSpacing: true,
       },
       defaults: { ease: "none"},
     });
@@ -70,33 +71,31 @@ function Hero() {
         rotateX: 70, // 3D kapanma hissi
         scaleY: 0.22, // yükseliş küçülür
         opacity: 0.95,
-      },
-      0
-    )
+        duration: 1,
+        ease: "power2.out",
+      })
     //memoji yükselişi 
     .to(
       memoji,
       {
         y: -12,
-        scale: 1.02,
+        scale: 1.05,
         opacity: 1,
-      },
-      0.05
-    )
+        duration: 0.8,
+      }, "-=0.6")
     // arka planda yazılar biraz geride kalsın 
     .to(
       yaziDuvari,
       {
         opacity: 0.85,
-      },
-      0
-    );
+        duration: 0.6,
+      }, 0);
 
    // component kapanırsa temizle 
    return () => {
     intro.kill();
     kaydirma.kill();
-    ScrollTrigger.getAll().forEach((t) => t.kill());
+  
    };
   }, []);
 
@@ -242,4 +241,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default Hero;

@@ -1,0 +1,177 @@
+.contact_section{
+  position: relative;
+  padding: 90px 0 70px;
+  background:
+    radial-gradient(700px 480px at 25% 20%, rgba(255,122,182,0.10), rgba(0,0,0,0) 60%),
+    radial-gradient(800px 520px at 80% 70%, rgba(178,141,255,0.16), rgba(0,0,0,0) 62%),
+    linear-gradient(180deg, #0b0b0f, #110a22);
+  overflow: hidden;
+}
+
+.contact_container{
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.contact_left{
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.40);
+  backdrop-filter: blur(6px);
+}
+
+.contact_title{
+  margin: 0 0 10px 0;
+  letter-spacing: 0.08em;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #b28dff, #ff7ab6, #ffd67a, #7dffb2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(26px, 2.2vw, 36px);
+}
+
+.contact_desc{
+  margin: 0 0 16px 0;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  font-size: clamp(14px, 1.05vw, 16px);
+}
+
+/* Kartlar */
+.contact_grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.contact_card{
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 44px 1fr 18px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.contact_card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+}
+
+.card_icon{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.92);
+}
+
+.card_text{
+  display: grid;
+  gap: 2px;
+}
+
+.card_label{
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.56);
+}
+
+.card_value{
+  font-size: 14px;
+  color: rgba(255,255,255,0.92);
+  word-break: break-word;
+}
+
+.card_arrow{
+  color: rgba(255,255,255,0.55);
+  font-weight: 900;
+}
+
+/* WhatsApp kartı */
+.contact_card_whatsapp .card_icon{
+  border-color: rgba(125,255,178,0.25);
+}
+
+/* Sağ taraf memoji */
+.contact_right{
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.memoji_frame{
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,122,182,0.22), rgba(255,214,122,0.18), rgba(125,255,178,0.14));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 26px 80px rgba(0,0,0,0.55);
+
+  place-items: center;
+}
+
+.contact_memoji{
+  width: 140%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 22px 60px rgba(0,0,0,0.35));
+}
+
+.memoji_glow{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  filter: blur(30px);
+  opacity: 0.65;
+}
+
+.glow1{
+  background: radial-gradient(260px 260px at 30% 20%, rgba(255,122,182,0.35), rgba(0,0,0,0));
+}
+
+.glow2{
+  background: radial-gradient(280px 280px at 80% 75%, rgba(178,141,255,0.40), rgba(0,0,0,0));
+}
+
+/* Alt renkli çizgi */
+.contact_cizgi{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #b28dff, #ff7ab6, #ffd67a, #7dffb2, #ff9b7a);
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .contact_container{
+    grid-template-columns: 1fr;
+  }
+  .contact_right{
+    order: -1;
+  }
+  .memoji_frame{
+    width: min(520px, 92vw);
+  }
+}
