@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    width: 100hv;
+    box-sizing: border-box;
 }
 :root {
   --soft-lila: #c8b6e2;
@@ -14,3 +14,9 @@ body {
   --yazi-guclu: rgba(255, 255, 255, 0.85);
 }
 
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Arka plan rengin (Siyah) */
+  font-family: 'Inter', sans-serif; /* Varsayılan fontun */
+}

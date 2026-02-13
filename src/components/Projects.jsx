@@ -28,7 +28,7 @@ export default function Projects() {
     {
       title: "EcoFlow",
       img: ecoflow,
-      link: "https://github.com/HanifeAlay/ecoflow.git",
+      link: "https://github.com/HanifeAlay/EcoFloww.git",
     },
     {
       title: "Weather App",
@@ -38,7 +38,7 @@ export default function Projects() {
     {
       title: "Bill Gates Page",
       img: billGates,
-      link: "https://github.com/HanifeAlay/bill-gates-page.git",
+      link: "https://github.com/HanifeAlay/Patika.dev-Bill-Gates-money.git",
     },
   ];
 
